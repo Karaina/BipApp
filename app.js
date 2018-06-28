@@ -1,5 +1,23 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
 
-/*const inputText = document.querySelector("input") 
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
+/*let request = new Request({
+    url: 'http://bip.franciscocapone.com/api/getSaldo/{id_tarjeta}',
+    method: 'GET'
+  });
+  fetch(request);
+  console.log(request);
+
+
+const inputText = document.querySelector("input") 
 inputText.addEventListener("keypress", (event)=> {
     let key = event.which || event.keyCode;
     if (key ===13) { // 13 es válido para enter
