@@ -1,4 +1,43 @@
-document.addEventListener('DOMContentLoaded', function() {
+function saveUsers() {
+  //validar que los campos no queden vacíos (ni en nombre ni en comentario.)
+  if ((document.getElementById("botoncillos").value ==="") ||
+  (document.getElementById("botoncillos").value === "")) {
+      alert("no puedes dejar campos vacíos");
+      }else {
+      //crear variables 
+      let name = document.getElementById("botoncillos").value;
+      let comment = document.getElementById("botoncillos").value;
+      //guardar el valor de ambas variables en localStorage
+      localStorage.setItem(name,comment); 
+      //localStorage tiene guardado los nombres y los comentarios
+      }
+  }
+  
+
+const user = {
+  name: 'user',
+  email: 'user@gmail.com',
+  photoUrl: 'https://images.com/user.png',
+};
+
+/*
+* Aquí se guarda el objeto en forma de string
+*/
+sessionStorage.setItem('loggedUser', JSON.stringify(user));
+
+console.log(sessionStorage.getItem('loggedUser'));
+// {"name":"user","email":"user@gmail.com","photoUrl":"https://images.com/user.png"}
+
+
+// home.html
+/*
+* Aquí se obtiene el objeto en forma de string y se convierte (parsea) a objeto
+*/
+const loggedUser = JSON.parse(sessionStorage.getItem('loggedUser'));
+console.log(typeof loggedUser); // "object"
+
+
+/*document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, options);
   });

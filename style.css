@@ -3,3 +3,13 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: papayawhip;
 }
+
+#botonUser{
+width: 206px;
+
+}
+
+#botonPassword{
+    display: block !important;
+   
+}
